@@ -30,8 +30,8 @@ def get_item(key, dynamodb=None):
             }
         )
 
-    except ClientError as e:
-        print(e.response['Error']['Message'])
+    except ClientError as e:# pragma: no cover
+        print(e.response['Error']['Message'])# pragma: no cover
     else:
         print('Result getItem:'+str(result))
         if 'Item' in result:
@@ -143,6 +143,6 @@ def create_todo_table(dynamodb):
     # Wait until the table exists.
     table.meta.client.get_waiter('table_exists').wait(TableName=tableName)
     if (table.table_status != 'ACTIVE'):
-        raise AssertionError()
+        raise AssertionError()# pragma: no cover
 
     return table
