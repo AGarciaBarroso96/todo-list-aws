@@ -10,15 +10,15 @@ from botocore.exceptions import ClientError
 def get_table(dynamodb=None):
     if not dynamodb:
         #AGB utilizamos el comando pragma: no cover para aumentar el porcentaje de coverage
-        URL = os.environ['ENDPOINT_OVERRIDE'] # pragma: no cover
-        if URL:# pragma: no cover
-            print('URL dynamoDB:'+URL)# pragma: no cover
-            boto3.client = functools.partial(boto3.client, endpoint_url=URL)# pragma: no cover
+        URL = os.environ['ENDPOINT_OVERRIDE'] 
+        if URL:
+            print('URL dynamoDB:'+URL)
+            boto3.client = functools.partial(boto3.client, endpoint_url=URL)
             boto3.resource = functools.partial(boto3.resource,
-                                               endpoint_url=URL)# pragma: no cover
-        dynamodb = boto3.resource("dynamodb")# pragma: no cover
+                                               endpoint_url=URL)
+        dynamodb = boto3.resource("dynamodb")
     # fetch todo from the database
-    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])# pragma: no cover
+    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
     return table
 
 
