@@ -28,6 +28,7 @@ confirm_changeset = true
 [production.deploy]
 [production.deploy.parameters]
 stack_name = "todo-list-aws-production"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1ebm3wo0jp3u9"
 s3_prefix = "todo-list-aws"
 region = "us-east-1"
 capabilities = "CAPABILITY_IAM"
