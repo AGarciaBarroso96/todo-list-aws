@@ -9,7 +9,7 @@ from botocore.exceptions import ClientError
 
 def get_table(dynamodb=None):
     if not dynamodb:
-        #AGB utilizamos el comando pragma: no cover para aumentar el porcentaje de coverage
+        #AGB utilizamos el comando pragma: no cover
         URL = os.environ['ENDPOINT_OVERRIDE'] 
         if URL:
             print('URL dynamoDB:'+URL)
