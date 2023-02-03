@@ -63,7 +63,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('End: test_table_exists')
         
 
-    def test_put_todo(self): # pragma: no cover
+    def test_put_todo(self): 
         print ('---------------------')
         print ('Start: test_put_todo')
         # Testing file functions
